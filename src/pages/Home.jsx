@@ -14,6 +14,7 @@ import {
   FaCloud
 } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import TransferCalculator from '../components/TransferCalculator'
 
 const Home = () => {
   const fadeInUp = {
@@ -128,35 +129,7 @@ const Home = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 transform hover:scale-105 transition-transform duration-300">
-                <div className="space-y-6">
-                  <div className="flex items-center justify-between p-4 bg-primary-50 rounded-xl">
-                    <span className="font-semibold text-gray-700">Transfer Amount</span>
-                    <span className="text-2xl font-bold text-primary-600">$500</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-accent-50 rounded-xl">
-                    <span className="font-semibold text-gray-700">Exchange Rate</span>
-                    <span className="text-2xl font-bold text-accent-600">55.80 ETB</span>
-                  </div>
-                  <div className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
-                    <span className="font-semibold text-gray-700">Recipient Gets</span>
-                    <span className="text-2xl font-bold text-green-600">27,900 ETB</span>
-                  </div>
-                  <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Send Money Now
-                  </button>
-                </div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-6 -right-6 w-72 h-72 bg-primary-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse-slow"></div>
-              <div className="absolute -bottom-6 -left-6 w-72 h-72 bg-accent-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-            </motion.div>
+            <TransferCalculator />
           </div>
         </div>
       </section>
