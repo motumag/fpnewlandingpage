@@ -19,11 +19,13 @@ import {
   FaHeart
 } from 'react-icons/fa'
 import { useState } from 'react'
+import ApplicationModal from '../components/ApplicationModal'
 
 const CareerDetail = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [showShareMenu, setShowShareMenu] = useState(false)
+  const [showApplicationModal, setShowApplicationModal] = useState(false)
 
   // Job data (in real app, this would come from API or context)
   const jobListings = [
@@ -672,7 +674,10 @@ The ideal candidate has a strong technical background and experience in fintech 
                 animate={{ opacity: 1, x: 0 }}
                 className="bg-white rounded-2xl shadow-sm p-6 mb-6"
               >
-                <button className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg mb-4">
+                <button 
+                  onClick={() => setShowApplicationModal(true)}
+                  className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg mb-4"
+                >
                   Apply for this Position
                 </button>
 
@@ -816,6 +821,15 @@ The ideal candidate has a strong technical background and experience in fintech 
           </div>
         </motion.div>
       </div>
+
+      {/* Application Modal */}
+      <ApplicationModal
+        isOpen={showApplicationModal}
+        onClose={() => setShowApplicationModal(false)}
+        jobTitle={job.title}
+        jobId={job.id}
+        department={job.department}
+      />
     </div>
   )
 }
