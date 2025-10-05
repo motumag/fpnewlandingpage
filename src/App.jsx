@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import AboutUs from './pages/AboutUs'
+import Careers from './pages/Careers'
+import CareerDetail from './pages/CareerDetail'
 import ContactUs from './pages/ContactUs'
 import FAQs from './pages/FAQs'
 import Donations from './pages/Donations'
@@ -16,6 +18,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/careers/:id" element={<CareerDetail />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/donations" element={<Donations />} />
