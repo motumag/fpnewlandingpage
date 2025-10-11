@@ -41,26 +41,26 @@ const ContactUs = () => {
     {
       icon: <FaMapMarkerAlt className="text-3xl text-primary-600" />,
       title: "Office Address",
-      content: "Silver Spring, Maryland, USA",
-      details: "Principal Office Location"
+      content: "8701 Georgia Ave, Suite 606",
+      details: "Silver Spring, Maryland, 20910"
     },
     {
       icon: <FaPhone className="text-3xl text-primary-600" />,
-      title: "Phone",
-      content: "+1 (XXX) XXX-XXXX",
+      title: "Phone (USA)",
+      content: "+1 (301) 200-7090",
       details: "Mon-Fri 9AM-6PM EST"
+    },
+    {
+      icon: <FaPhone className="text-3xl text-primary-600" />,
+      title: "Phone (Ethiopia)",
+      content: "+251 99-549-9844",
+      details: "Local support available"
     },
     {
       icon: <FaEnvelope className="text-3xl text-primary-600" />,
       title: "Email",
-      content: "info@fastpay.com",
+      content: "support@fastpayet.com",
       details: "We respond within 24 hours"
-    },
-    {
-      icon: <FaClock className="text-3xl text-primary-600" />,
-      title: "Business Hours",
-      content: "24/7 Online Service",
-      details: "Customer support available"
     }
   ]
 
@@ -260,11 +260,23 @@ const ContactUs = () => {
             <p className="text-xl text-gray-600 mb-6">
               Located in Silver Spring, Maryland
             </p>
-            <div className="bg-white rounded-xl p-8 max-w-2xl mx-auto">
-              <p className="text-gray-700 mb-4 font-semibold">FastPay LLC</p>
-              <p className="text-gray-600">Silver Spring, Maryland, USA</p>
-              <p className="text-gray-600 mt-4">Maryland Department ID: W22452742</p>
-              <p className="text-gray-600">EIN: XX-XXX0674</p>
+            <div className="bg-white rounded-xl p-8 max-w-2xl mx-auto space-y-4">
+              <div>
+                <p className="text-gray-700 mb-2 font-semibold text-lg">FastPay Technology PLC</p>
+                <p className="text-gray-600">8701 Georgia Ave, Suite 606</p>
+                <p className="text-gray-600">Silver Spring, Maryland, 20910</p>
+              </div>
+              <div className="pt-4 border-t">
+                <p className="text-gray-700 font-semibold mb-2">Contact Information:</p>
+                <p className="text-gray-600">Phone (USA): +1 (301) 200-7090</p>
+                <p className="text-gray-600">Phone (Ethiopia): +251 99-549-9844</p>
+                <p className="text-gray-600">Email: info@fastpayet.com | support@fastpayet.com</p>
+                <p className="text-gray-600">Website: fastpayet.com</p>
+              </div>
+              <div className="pt-4 border-t">
+                <p className="text-gray-600">Maryland Department ID: W22452742</p>
+                <p className="text-gray-600">EIN: XX-XXX0674</p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -291,7 +303,7 @@ const ContactUs = () => {
                   View FAQs
                 </a>
                 <a
-                  href="mailto:support@fastpay.com"
+                  href="mailto:support@fastpayet.com"
                   className="bg-white hover:bg-gray-50 text-primary-600 border-2 border-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
                 >
                   Email Support

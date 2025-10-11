@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { FaBars, FaTimes, FaUser } from 'react-icons/fa'
 
@@ -7,6 +7,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,7 +19,57 @@ const Header = () => {
 
   useEffect(() => {
     setIsOpen(false)
+    
+    // Handle hash navigation
+    if (location.hash) {
+      const id = location.hash.replace('#', '')
+      setTimeout(() => {
+        const element = document.getElementById(id)
+        if (element) {
+          const offset = 80 // Height of fixed header
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          })
+        }
+      }, 100)
+    }
   }, [location])
+
+  const handleNavClick = (e, path) => {
+    if (path.includes('#')) {
+      e.preventDefault()
+      const [pathname, hash] = path.split('#')
+      
+      if (location.pathname !== pathname && pathname) {
+        // Navigate to home first, then scroll
+        navigate(pathname)
+        setTimeout(() => {
+          const element = document.getElementById(hash)
+          if (element) {
+            const offset = 80
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+            window.scrollTo({
+              top: elementPosition - offset,
+              behavior: 'smooth'
+            })
+          }
+        }, 100)
+      } else {
+        // Already on the page, just scroll
+        const element = document.getElementById(hash)
+        if (element) {
+          const offset = 80
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          })
+        }
+      }
+    }
+  }
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -28,7 +79,8 @@ const Header = () => {
     { name: 'Careers', path: '/careers' },
     { name: 'Contact Us', path: '/contact' },
     { name: 'FAQs', path: '/faqs' },
-    { name: 'Donations', path: '/donations' },
+    { name: 'Agent', path: '/agent' },
+    // { name: 'Donations', path: '/donations' },
   ]
 
   const isActive = (path) => {
@@ -64,6 +116,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={(e) => handleNavClick(e, link.path)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(link.path)
                     ? 'text-primary-600 bg-primary-50'
@@ -108,6 +161,7 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.path}
+                onClick={(e) => handleNavClick(e, link.path)}
                 className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive(link.path)
                     ? 'text-primary-600 bg-primary-50'

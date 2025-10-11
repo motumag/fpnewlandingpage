@@ -4,7 +4,7 @@ import {
   FaShieldAlt, 
   FaGlobe, 
   FaMobileAlt, 
-  FaUniversity, 
+  FaFileInvoiceDollar, 
   FaClock,
   FaCheckCircle,
   FaChartLine,
@@ -27,32 +27,38 @@ const Home = () => {
     {
       icon: <FaMobileAlt className="text-4xl text-primary-600" />,
       title: "Mobile Money Transfer",
-      description: "Send money to Ethiopia instantly using our iOS and Android apps. Available 24/7 from anywhere in the world."
+      description: "Send money to Ethiopia instantly using our iOS and Android apps. Available 24/7 from anywhere in the world.",
+      link: "mobile-money-transfer"
     },
     {
-      icon: <FaUniversity className="text-4xl text-primary-600" />,
-      title: "Bank Network Access",
-      description: "Direct integration with 30+ leading banks in Ethiopia ensures wide coverage and reliable delivery."
+      icon: <FaFileInvoiceDollar className="text-4xl text-primary-600" />,
+      title: "Bill Payment Service",
+      description: "Pay utility bills, school fees, and other services directly in Ethiopia from anywhere in the world.",
+      link: "bill-payment-service"
     },
     {
       icon: <FaGlobe className="text-4xl text-primary-600" />,
       title: "Agent Services",
-      description: "Authorized agents can process transfers securely through our dedicated agent platform."
+      description: "Authorized agents can process transfers securely through our dedicated agent platform.",
+      link: "agent-services"
     },
     {
       icon: <FaClock className="text-4xl text-primary-600" />,
       title: "Real-Time Processing",
-      description: "Automated transaction validation and instant confirmation for faster fund delivery."
+      description: "Automated transaction validation and instant confirmation for faster fund delivery.",
+      link: "real-time-processing"
     },
     {
       icon: <FaShieldAlt className="text-4xl text-primary-600" />,
       title: "Secure Transactions",
-      description: "End-to-end encryption, multi-factor authentication, and compliance with US regulations."
+      description: "End-to-end encryption, multi-factor authentication, and compliance with US regulations.",
+      link: "secure-transactions"
     },
     {
       icon: <FaChartLine className="text-4xl text-primary-600" />,
       title: "Competitive Rates",
-      description: "Transparent pricing with competitive exchange rates and low transfer fees."
+      description: "Transparent pricing with competitive exchange rates and low transfer fees.",
+      link: "competitive-rates"
     }
   ]
 
@@ -80,10 +86,10 @@ const Home = () => {
   ]
 
   const stats = [
-    { number: "30+", label: "Partner Banks" },
+    { number: "5+", label: "Partner Banks" },
+    { number: "30+", label: "Instant Deposit" },
+    { number: "37K+", label: "Customer Base" },
     { number: "24/7", label: "Availability" },
-    { number: "100K+", label: "Transactions" },
-    { number: "99.9%", label: "Success Rate" }
   ]
 
   return (
@@ -106,8 +112,8 @@ const Home = () => {
                 Licensed Money Services Business delivering innovative, secure, and dependable cross-border payment solutions. Send money instantly to 30+ banks across Ethiopia.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/login" className="btn-primary text-center">
-                  Get Started
+                <Link to="/about" className="btn-primary text-center">
+                  Learn More
                 </Link>
                 <Link to="/contact" className="btn-secondary text-center">
                   Contact Us
@@ -116,7 +122,7 @@ const Home = () => {
               <div className="mt-8 flex items-center space-x-4 text-sm text-gray-600">
                 <div className="flex items-center">
                   <FaCheckCircle className="text-green-500 mr-2" />
-                  <span>NMLS Licensed</span>
+                  <span>NMLS Registered</span>
                 </div>
                 <div className="flex items-center">
                   <FaCheckCircle className="text-green-500 mr-2" />
@@ -125,6 +131,10 @@ const Home = () => {
                 <div className="flex items-center">
                   <FaCheckCircle className="text-green-500 mr-2" />
                   <span>NBE Approved</span>
+                </div>
+                <div className="flex items-center">
+                  <FaCheckCircle className="text-green-500 mr-2" />
+                  <span>MD ORF Licensed</span>
                 </div>
               </div>
             </motion.div>
@@ -170,20 +180,40 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="card group"
-              >
-                <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{service.description}</p>
-              </motion.div>
+              <Link key={index} to={`/services/${service.link}`}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="card group cursor-pointer relative overflow-hidden"
+                >
+                  {/* Hover indicator */}
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="bg-primary-600 text-white rounded-full p-2">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">{service.description}</p>
+                  
+                  {/* Learn More hint */}
+                  <div className="flex items-center text-primary-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Read Full Guide</span>
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -237,7 +267,7 @@ const Home = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="bg-white rounded-xl p-6 text-center shadow-md">
                 <div className="text-3xl font-bold text-primary-600 mb-2">NMLS</div>
-                <div className="text-sm text-gray-600">ID: 2327896</div>
+                <div className="text-sm text-gray-600">Registered ID: 2327896</div>
               </div>
               <div className="bg-white rounded-xl p-6 text-center shadow-md">
                 <div className="text-3xl font-bold text-primary-600 mb-2">FinCEN</div>
@@ -265,17 +295,17 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Send Money?
+              Ready to Become an Agent?
             </h2>
             <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-              Join thousands of customers who trust FastPay for their remittance needs. Fast, secure, and reliable.
+              Join Agents who trust FastPay for their remittance needs. Fast, secure, and reliable.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/login" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Create Account
+              <Link to="/agent" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Learn More About Us
               </Link>
-              <Link to="/about" className="bg-primary-700 hover:bg-primary-800 text-white border-2 border-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
-                Learn More
+              <Link to="/faqs" className="bg-primary-700 hover:bg-primary-800 text-white border-2 border-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105">
+                View FAQs
               </Link>
             </div>
           </motion.div>

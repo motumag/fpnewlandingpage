@@ -3,11 +3,22 @@ import { FaCheckCircle, FaShieldAlt, FaGlobe, FaUsers, FaAward, FaHandshake } fr
 
 const AboutUs = () => {
   const milestones = [
-    { year: "2021", event: "FastPay LLC Incorporated in Maryland" },
-    { year: "2022", event: "Received Maryland Money Transmitter License" },
-    { year: "2022", event: "NMLS Registration & FinCEN MSB Registration" },
-    { year: "2023", event: "National Bank of Ethiopia Approval" },
-    { year: "2024", event: "Integration with 30+ Ethiopian Banks" }
+    { 
+      year: "2021", 
+      events: ["FastPay LLC Incorporated in Maryland"]
+    },
+    { 
+      year: "2023", 
+      events: [
+        "Received Maryland Money Transmitter License",
+        "NMLS Registration & FinCEN MSB Registration",
+        "National Bank of Ethiopia Approval"
+      ]
+    },
+    { 
+      year: "2024", 
+      events: ["Integration with 30+ Ethiopian Banks"]
+    }
   ]
 
   const values = [
@@ -89,22 +100,52 @@ const AboutUs = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                FastPay LLC was established to bridge the gap between Ethiopian diaspora communities and their families back home, providing a secure, fast, and cost-effective way to send money across borders.
-              </p>
-              <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-                With our principal office in Silver Spring, Maryland, we combine the trust and regulatory safeguards of a licensed Money Services Business with the innovation and efficiency of a modern FinTech provider.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Through strategic partnerships with more than 30 leading banks in Ethiopia, we ensure broad coverage, unmatched speed, and unwavering reliability for every transaction.
-              </p>
+              <div className="text-lg mb-4 leading-relaxed bg-gradient-to-br from-primary-50 via-accent-50 to-white p-6 rounded-xl border-l-4 border-accent-500 shadow-md">
+                <p className="text-gray-800">
+                  FastPay exists to <span className="font-bold text-primary-600">redefine</span>{' '}
+                  <span className="font-semibold text-accent-600">cross-border payments</span> — delivering a{' '}
+                  <span className="font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
+                    fast, transparent, and reliable
+                  </span>{' '}
+                  remittance experience that builds{' '}
+                  <span className="font-semibold text-primary-700">trust</span> and{' '}
+                  <span className="font-semibold text-accent-600">financial inclusion</span>{' '}
+                  across communities{' '}
+                  <span className="font-bold text-primary-600">worldwide</span>.
+                </p>
+              </div>
+
+              {/* Vision */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="mt-8"
+              >
+                <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Vision</h2>
+                <div className="text-lg mb-4 leading-relaxed bg-gradient-to-br from-accent-50 via-primary-50 to-white p-6 rounded-xl border-l-4 border-primary-500 shadow-md">
+                  <p className="text-gray-800">
+                    To be the{' '}
+                    <span className="font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">
+                      #1 digital bridge
+                    </span>{' '}
+                    connecting{' '}
+                    <span className="font-semibold text-primary-600">diaspora communities</span>{' '}
+                    with their{' '}
+                    <span className="font-semibold text-accent-600">home countries</span>, empowering{' '}
+                    <span className="font-bold text-primary-700">millions</span>{' '}
+                    with seamless access to{' '}
+                    <span className="font-bold text-accent-600">financial services</span>.
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl p-8"
+              className="relative"
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose FastPay?</h3>
               <ul className="space-y-4">
@@ -191,22 +232,49 @@ const AboutUs = () => {
             {milestones.map((milestone, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center mb-8 last:mb-0"
+                className="relative mb-8 last:mb-0"
               >
-                <div className="flex-shrink-0 w-24 text-right mr-8">
-                  <span className="text-2xl font-bold text-primary-600">{milestone.year}</span>
-                </div>
-                <div className="flex-shrink-0 w-4 h-4 bg-primary-600 rounded-full relative">
-                  {index !== milestones.length - 1 && (
-                    <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-0.5 h-16 bg-primary-200"></div>
-                  )}
-                </div>
-                <div className="ml-8 bg-gray-50 rounded-lg p-4 flex-grow">
-                  <p className="text-gray-800 font-medium">{milestone.event}</p>
+                {/* Vertical Line */}
+                {index !== milestones.length - 1 && (
+                  <div className="absolute left-[44px] top-[42px] w-0.5 h-[calc(100%+16px)] bg-primary-200"></div>
+                )}
+
+                <div className="flex items-start gap-6">
+                  {/* Year Circle */}
+                  <div className="flex-shrink-0 w-[88px] flex items-center justify-center">
+                    <div className="bg-gradient-to-br from-primary-600 to-accent-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg relative z-10">
+                      <span className="text-lg font-bold">{milestone.year}</span>
+                    </div>
+                  </div>
+
+                  {/* Events Tree */}
+                  <div className="flex-grow">
+                    {milestone.events.map((event, eventIndex) => (
+                      <motion.div
+                        key={eventIndex}
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 + eventIndex * 0.08 }}
+                        className="relative mb-3 last:mb-0"
+                      >
+                        {/* Horizontal Branch Line */}
+                        <div className="absolute left-[-24px] top-1/2 w-6 h-0.5 bg-primary-300"></div>
+                        
+                        {/* Event Card */}
+                        <div className="bg-white rounded-lg shadow-md p-4 border-l-4 border-accent-500 hover:shadow-lg transition-all duration-300">
+                          <div className="flex items-center">
+                            <div className="w-2 h-2 bg-accent-500 rounded-full mr-3"></div>
+                            <p className="text-gray-800 font-medium text-sm">{event}</p>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}

@@ -33,15 +33,15 @@ const FAQs = () => {
         },
         {
           question: "What are your fees and exchange rates?",
-          answer: "FastPay offers transparent, competitive pricing. Our fees vary based on the transfer amount and payment method. Exchange rates are updated in real-time and displayed before you confirm your transaction. There are no hidden fees – what you see is what you pay."
+          answer: "FastPay offers transparent, competitive pricing. Exchange rates are updated in real-time and displayed before you confirm your transaction. There are no hidden fees – what you see is what you pay."
         },
         {
           question: "How much can I send?",
-          answer: "Transfer limits depend on your account verification level and transaction history. New accounts typically start with a daily limit of $2,500 and can be increased upon request with additional verification. For business accounts, higher limits are available."
+          answer: "Transfer limits depend on your account verification level and transaction history. New accounts typically start with a daily limit of $3,000 and can be increased upon request with additional verification."
         },
         {
           question: "Which banks in Ethiopia can receive transfers?",
-          answer: "FastPay partners with more than 30 leading banks across Ethiopia, including Commercial Bank of Ethiopia, Awash Bank, Dashen Bank, Bank of Abyssinia, and many others. This ensures broad coverage and accessibility for your recipients."
+          answer: "FastPay instantly deposit with more than 30 leading banks across Ethiopia, including Commercial Bank of Ethiopia, Awash Bank, Dashen Bank, Bank of Abyssinia, and many others. This ensures broad coverage and accessibility for your recipients."
         }
       ]
     },
@@ -79,7 +79,7 @@ const FAQs = () => {
         },
         {
           question: "How do I contact customer support?",
-          answer: "Our customer support team is available 24/7. You can reach us through the Contact Us page, email at support@fastpay.com, or call our support line. We typically respond to inquiries within a few hours."
+          answer: "Our customer support team is available on a +1 (301) 200-7090 or +251 99-549-9844 phone line. You can reach us through the Contact Us page, email at support@fastpayet.com, or call our support line. We typically respond to inquiries within a few hours."
         },
         {
           question: "Can I cancel a transfer?",
@@ -92,16 +92,13 @@ const FAQs = () => {
       questions: [
         {
           question: "Which platforms does FastPay support?",
-          answer: "FastPay is available on iOS (iPhone and iPad), Android devices, and through our web platform accessible from any modern browser. You can initiate and manage transfers from any of these platforms."
+          answer: "FastPay is available on iOS (iPhone), Android devices, and through our web platform ( Agent portal) accessible from any modern browser. You can initiate and manage transfers from any of these platforms."
         },
         {
           question: "What payment methods do you accept?",
           answer: "We accept bank transfers (ACH), debit cards, and credit cards. Bank transfers typically have lower fees, while card payments offer instant funding. Your payment method can be saved securely for future transactions."
         },
-        {
-          question: "Do you have an API for businesses?",
-          answer: "Yes, we offer a robust API for businesses and agents. Our agent portal allows authorized representatives to process transfers on behalf of customers. Contact our business development team for API documentation and integration support."
-        }
+      
       ]
     }
   ]

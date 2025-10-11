@@ -57,7 +57,7 @@ const Login = () => {
               <span className="text-accent-500">Pay</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Join thousands of customers who trust FastPay for secure, fast, and reliable money transfers to Ethiopia.
+              Join agents of customers who trust FastPay for secure, fast, and reliable money transfers to Ethiopia.
             </p>
 
             <div className="space-y-6 mb-8">
