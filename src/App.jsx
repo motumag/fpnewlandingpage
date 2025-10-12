@@ -15,6 +15,7 @@ import Login from './pages/Login'
 import Terms from './pages/Terms'
 import Privacy from './pages/Privacy'
 import Compliance from './pages/Compliance'
+import LeadershipTeam from './pages/LeadershipTeam'
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/compliance" element={<Compliance />} />
+          <Route path="/leadership" element={<LeadershipTeam />} />
         </Routes>
       </main>
       <Footer />

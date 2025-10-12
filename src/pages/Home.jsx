@@ -64,22 +64,22 @@ const Home = () => {
 
   const features = [
     {
-      icon: <FaCloud className="text-4xl text-primary-600" />,
+      icon: <FaCloud className="text-4xl" />,
       title: "Cloud Infrastructure",
       description: "Scalable, secure cloud-based systems ensuring 99.9% uptime and disaster recovery capabilities."
     },
     {
-      icon: <FaNetworkWired className="text-4xl text-primary-600" />,
+      icon: <FaNetworkWired className="text-4xl" />,
       title: "API Integration",
       description: "Direct connections with Ethiopian banks through secure APIs for seamless transactions."
     },
     {
-      icon: <FaUserShield className="text-4xl text-primary-600" />,
+      icon: <FaUserShield className="text-4xl" />,
       title: "KYC/AML Compliance",
       description: "Advanced identity verification and transaction monitoring in compliance with BSA and PATRIOT Act."
     },
     {
-      icon: <FaLock className="text-4xl text-primary-600" />,
+      icon: <FaLock className="text-4xl" />,
       title: "Data Security",
       description: "SSL encryption, role-based access controls, and secure data storage protect your information."
     }
@@ -232,21 +232,78 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16" style={{ perspective: '1000px' }}>
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 50, rotateX: -15 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center p-6 rounded-xl hover:bg-gray-50 transition-all duration-300"
+                transition={{ 
+                  delay: index * 0.15,
+                  duration: 0.8,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                whileHover={{ 
+                  scale: 1.05,
+                  rotateY: 5,
+                  rotateX: 5,
+                  z: 50,
+                  transition: { duration: 0.3 }
+                }}
+                className="relative text-center p-6 rounded-xl bg-gradient-to-br from-white to-primary-50 border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300"
+                style={{ 
+                  transformStyle: 'preserve-3d',
+                  backfaceVisibility: 'hidden'
+                }}
               >
-                <div className="inline-block mb-4 p-4 bg-primary-50 rounded-full transform hover:rotate-12 transition-transform duration-300">
-                  {feature.icon}
+                {/* 3D Floating Background Element */}
+                <div 
+                  className="absolute inset-0 bg-gradient-to-br from-primary-100/20 to-accent-100/20 rounded-xl blur-sm"
+                  style={{ 
+                    transform: 'translateZ(-20px)',
+                    transformStyle: 'preserve-3d'
+                  }}
+                />
+                
+                {/* Content with 3D depth */}
+                <div className="relative" style={{ transformStyle: 'preserve-3d' }}>
+                  <motion.div 
+                    className="inline-flex items-center justify-center mb-4 p-4 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl shadow-lg"
+                    whileHover={{ 
+                      rotateY: 360,
+                      transition: { duration: 0.8 }
+                    }}
+                    style={{ 
+                      transform: 'translateZ(40px)',
+                      transformStyle: 'preserve-3d'
+                    }}
+                  >
+                    <div className="text-white">
+                      {feature.icon}
+                    </div>
+                  </motion.div>
+                  
+                  <h3 
+                    className="text-xl font-bold text-gray-900 mb-3"
+                    style={{ transform: 'translateZ(20px)' }}
+                  >
+                    {feature.title}
+                  </h3>
+                  
+                  <p 
+                    className="text-gray-600"
+                    style={{ transform: 'translateZ(10px)' }}
+                  >
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+
+                {/* Glowing border effect on hover */}
+                <div className="absolute inset-0 rounded-xl opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary-500/20 via-accent-500/20 to-primary-500/20 blur-md"></div>
+                </div>
               </motion.div>
             ))}
           </div>

@@ -1,60 +1,76 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { FaMobileAlt, FaUniversity, FaShieldAlt, FaGlobe, FaUsers, FaBolt, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { FaMobileAlt, FaUniversity, FaShieldAlt, FaGlobe, FaUsers, FaBolt, FaChevronLeft, FaChevronRight, FaChartLine, FaLock, FaClock } from 'react-icons/fa'
 
 const TransferCalculator = () => {
   const [scrollPosition, setScrollPosition] = useState(0)
   const scrollContainerRef = useRef(null)
 
-  // Remittance-related cards
-  const remittanceCards = [
+  // Feature cards with circular icon design
+  const featureCards = [
     {
       id: 1,
       icon: FaMobileAlt,
       title: "Mobile Transfer",
       description: "Send money instantly from your phone to any bank in Ethiopia",
-      gradient: "from-blue-500 via-blue-600 to-blue-700",
-      accentColor: "blue"
+      circleColor: "from-blue-400 to-blue-600",
+      bgColor: "bg-blue-50"
     },
     {
       id: 2,
       icon: FaUniversity,
       title: "30+ Banks",
       description: "Direct integration with leading Ethiopian banks nationwide",
-      gradient: "from-green-500 via-green-600 to-green-700",
-      accentColor: "green"
+      circleColor: "from-primary-500 to-primary-700",
+      bgColor: "bg-primary-50"
     },
     {
       id: 3,
       icon: FaShieldAlt,
       title: "Secure & Licensed",
       description: "NMLS licensed, FinCEN registered & fully compliant",
-      gradient: "from-purple-500 via-purple-600 to-purple-700",
-      accentColor: "purple"
+      circleColor: "from-green-400 to-green-600",
+      bgColor: "bg-green-50"
     },
     {
       id: 4,
       icon: FaBolt,
       title: "Instant Delivery",
       description: "Real-time processing with instant confirmation",
-      gradient: "from-orange-500 via-orange-600 to-orange-700",
-      accentColor: "orange"
+      circleColor: "from-orange-400 to-orange-600",
+      bgColor: "bg-orange-50"
     },
     {
       id: 5,
-      icon: FaUsers,
-      title: "Family Support",
-      description: "Helping families stay connected across borders",
-      gradient: "from-pink-500 via-pink-600 to-pink-700",
-      accentColor: "pink"
+      icon: FaChartLine,
+      title: "Real-Time Tracking",
+      description: "Monitor your transactions with live status updates",
+      circleColor: "from-purple-400 to-purple-600",
+      bgColor: "bg-purple-50"
     },
     {
       id: 6,
-      icon: FaGlobe,
-      title: "Global Reach",
-      description: "Send from anywhere in the world, anytime",
-      gradient: "from-indigo-500 via-indigo-600 to-indigo-700",
-      accentColor: "indigo"
+      icon: FaLock,
+      title: "Bank-Level Security",
+      description: "End-to-end encryption protecting every transaction",
+      circleColor: "from-indigo-400 to-indigo-600",
+      bgColor: "bg-indigo-50"
+    },
+    {
+      id: 7,
+      icon: FaUsers,
+      title: "24/7 Support",
+      description: "Always here to help your family stay connected",
+      circleColor: "from-pink-400 to-pink-600",
+      bgColor: "bg-pink-50"
+    },
+    {
+      id: 8,
+      icon: FaClock,
+      title: "Instant Confirmation",
+      description: "Get immediate confirmation for peace of mind",
+      circleColor: "from-teal-400 to-teal-600",
+      bgColor: "bg-teal-50"
     }
   ]
 
@@ -130,47 +146,52 @@ const TransferCalculator = () => {
           {/* Cards Container */}
           <div
             ref={scrollContainerRef}
-            className="flex overflow-x-auto gap-3 sm:gap-4 lg:gap-6 pb-4 snap-x snap-mandatory scrollbar-hide px-1"
+            className="flex overflow-x-auto gap-4 sm:gap-6 lg:gap-8 pb-4 snap-x snap-mandatory scrollbar-hide px-1"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            {remittanceCards.map((card, index) => (
+            {featureCards.map((card, index) => (
               <motion.div
                 key={card.id}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[340px] lg:w-[360px] snap-start"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.1, type: "spring" }}
+                className="flex-shrink-0 w-[280px] sm:w-[300px] md:w-[320px] lg:w-[340px] snap-start"
               >
-                <div className={`relative min-h-[300px] sm:min-h-[320px] lg:min-h-[340px] bg-gradient-to-br ${card.gradient} rounded-xl lg:rounded-2xl shadow-xl overflow-hidden group/card cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl`}>
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-10">
-                    <div className="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-full -mr-12 sm:-mr-16 -mt-12 sm:-mt-16"></div>
-                    <div className="absolute bottom-0 left-0 w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full -ml-10 sm:-ml-12 -mb-10 sm:-mb-12"></div>
-                  </div>
+                <div className="relative group/card">
+                  {/* Dotted Line Connector - Only show for not the last card */}
+                  {index < featureCards.length - 1 && (
+                    <div className="hidden md:block absolute top-1/2 -right-4 lg:-right-8 w-4 lg:w-8 border-t-2 border-dashed border-gray-300 z-0"></div>
+                  )}
 
-                  {/* Content */}
-                  <div className="relative p-6 sm:p-8 lg:p-10 h-full flex flex-col justify-center items-center text-center text-white">
-                    {/* Icon */}
+                  {/* Card */}
+                  <div className={`relative ${card.bgColor} rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-200 hover:border-gray-300 cursor-pointer transform hover:-translate-y-1`}>
+                    {/* Circular Icon */}
                     <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="mb-4 sm:mb-6 p-3 sm:p-4 bg-white/20 backdrop-blur-sm rounded-xl lg:rounded-2xl"
+                      whileHover={{ scale: 1.05, rotate: 5 }}
+                      className="relative"
                     >
-                      <card.icon className="text-4xl sm:text-5xl lg:text-6xl" />
+                      <div className={`w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br ${card.circleColor} flex items-center justify-center shadow-lg relative z-10`}>
+                        <card.icon className="text-3xl text-white" />
+                      </div>
+                      
+                      {/* Circular border ring */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 rounded-full border-2 border-dashed border-gray-300 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"></div>
                     </motion.div>
 
-                    {/* Title */}
-                    <h4 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-3">
-                      {card.title}
-                    </h4>
+                    {/* Content */}
+                    <div className="text-center">
+                      <h4 className="text-lg font-bold text-gray-900 mb-2">
+                        {card.title}
+                      </h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {card.description}
+                      </p>
+                    </div>
 
-                    {/* Description */}
-                    <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed">
-                      {card.description}
-                    </p>
-
-                    {/* Decorative line */}
-                    <div className="mt-4 sm:mt-6 w-12 sm:w-16 h-1 bg-white/40 rounded-full"></div>
+                    {/* Bottom decorative element */}
+                    <div className="mt-4 flex justify-center">
+                      <div className="w-12 h-1 bg-gradient-to-r from-transparent via-gray-300 to-transparent rounded-full"></div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -189,10 +210,10 @@ const TransferCalculator = () => {
 
         {/* Scroll Indicators */}
         <div className="flex justify-center mt-4 sm:mt-6 gap-2">
-          {remittanceCards.map((_, index) => (
+          {featureCards.map((_, index) => (
             <div
               key={index}
-              className="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400"
+              className="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-primary-500"
               role="button"
               aria-label={`Scroll to card ${index + 1}`}
               tabIndex={0}
