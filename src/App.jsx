@@ -7,6 +7,7 @@ import Careers from './pages/Careers'
 import CareerDetail from './pages/CareerDetail'
 import ServiceGuide from './pages/ServiceGuide'
 import Agent from './pages/Agent'
+import AgentOnboarding from './pages/AgentOnboarding'
 import ContactUs from './pages/ContactUs'
 import FAQs from './pages/FAQs'
 import Donations from './pages/Donations'
@@ -27,6 +28,7 @@ function App() {
           <Route path="/careers/:id" element={<CareerDetail />} />
           <Route path="/services/:serviceId" element={<ServiceGuide />} />
           <Route path="/agent" element={<Agent />} />
+          <Route path="/agent-onboarding" element={<AgentOnboarding />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/donations" element={<Donations />} />

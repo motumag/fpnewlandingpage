@@ -145,7 +145,7 @@ const Agent = () => {
                 Partner with us and build a profitable business while serving your community. Earn competitive commissions on every transaction.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/login" className="bg-white text-primary-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                <Link to="/agent-onboarding" className="bg-white text-primary-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
                   Apply Now
                 </Link>
                 <a href="#how-it-works" className="bg-primary-700 hover:bg-primary-800 text-white border-2 border-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 text-center">
@@ -435,7 +435,7 @@ const Agent = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  to="/login"
+                  to="/agent-onboarding"
                   className="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2"
                 >
                   <span>Apply Now</span>
