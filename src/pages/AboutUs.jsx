@@ -1,5 +1,34 @@
 import { motion } from 'framer-motion'
-import { FaCheckCircle, FaShieldAlt, FaGlobe, FaUsers, FaAward, FaHandshake } from 'react-icons/fa'
+import { 
+  FaCheckCircle, 
+  FaShieldAlt, 
+  FaGlobe, 
+  FaUsers, 
+  FaAward, 
+  FaHandshake,
+  FaUserTie,
+  FaMapMarkerAlt,
+  FaLaptopCode,
+  FaCog,
+  FaCode,
+  FaServer,
+  FaMobileAlt,
+  FaChartLine,
+  FaUsersCog,
+  FaHeadset,
+  FaUserShield,
+  FaDatabase,
+  FaBug,
+  FaNetworkWired,
+  FaDollarSign,
+  FaBalanceScale,
+  FaBullhorn,
+  FaFileInvoice,
+  FaPalette,
+  FaClipboardList,
+  FaRobot,
+  FaUniversity
+} from 'react-icons/fa'
 
 const AboutUs = () => {
   const milestones = [
@@ -278,6 +307,292 @@ const AboutUs = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Organizational Structure Section */}
+      <section className="py-12 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Organization Structure</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our leadership team brings together expertise in fintech, technology, and operations
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col items-center max-w-[1400px] mx-auto overflow-x-auto">
+            {/* CEO Level */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center mb-3"
+            >
+              <div className="bg-white border-2 border-gray-200 rounded-xl shadow-lg hover:shadow-xl transition-shadow p-2.5 w-32 text-center">
+                <img 
+                  src="https://ui-avatars.com/api/?name=CEO&size=56&background=1e40af&color=fff&bold=true&rounded=true" 
+                  alt="CEO"
+                  className="w-14 h-14 rounded-full mx-auto mb-1.5 border-2 border-primary-500 shadow-md object-cover ring-2 ring-primary-100"
+                />
+                <h3 className="text-xs font-bold text-gray-900">CEO</h3>
+                <p className="text-primary-600 text-[9px] font-medium">Executive</p>
+              </div>
+              {/* Vertical Line */}
+              <div className="w-0.5 h-4 bg-primary-300 mt-1"></div>
+            </motion.div>
+
+            {/* Country Director Level */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.05 }}
+              className="flex flex-col items-center mb-3"
+            >
+              <div className="bg-white border-2 border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow p-2.5 w-32 text-center">
+                <img 
+                  src="https://ui-avatars.com/api/?name=Country+Director&size=48&background=7c3aed&color=fff&bold=true&rounded=true" 
+                  alt="Country Director"
+                  className="w-12 h-12 rounded-full mx-auto mb-1.5 border-2 border-accent-500 shadow-md object-cover ring-2 ring-accent-100"
+                />
+                <h3 className="text-xs font-bold text-gray-900">Country Dir</h3>
+                <p className="text-accent-600 text-[8px] font-medium">Ethiopia</p>
+              </div>
+              {/* Vertical Line */}
+              <div className="w-0.5 h-4 bg-primary-300 mt-1"></div>
+            </motion.div>
+
+            {/* C-Suite Level - 4 executives with horizontal line */}
+            <div className="relative w-full max-w-5xl mx-auto">
+              {/* Horizontal Junction Line for C-Suite */}
+              <div className="absolute left-0 right-0 top-0 h-0.5 bg-primary-300"></div>
+              
+              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 mb-4 justify-items-center pt-0">
+                {/* CTO */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="flex flex-col items-center w-full"
+                >
+                  <div className="w-0.5 h-3 bg-primary-300"></div>
+                <div className="bg-white border-2 border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow p-2 w-28 text-center">
+                  <img 
+                    src="https://ui-avatars.com/api/?name=CTO&size=40&background=2563eb&color=fff&bold=true&rounded=true" 
+                    alt="CTO"
+                    className="w-10 h-10 rounded-full mx-auto mb-1.5 border-2 border-blue-500 shadow-md object-cover ring-2 ring-blue-100"
+                  />
+                  <h3 className="text-[10px] font-bold text-gray-900">CTO</h3>
+                  <p className="text-blue-600 text-[8px] font-medium">Technology</p>
+                </div>
+
+                {/* Tree Structure - Horizontal Layout */}
+                <div className="mt-2 w-full">
+                  <div className="flex flex-col items-center">
+                    <div className="w-0.5 h-4 bg-blue-400"></div>
+                    <div className="w-full relative">
+                      {/* Horizontal line connecting all directors - BLUE for CTO */}
+                      <div className="absolute left-0 right-0 top-0 h-0.5 bg-blue-400"></div>
+                      
+                      <div className="flex flex-wrap justify-center gap-x-1.5 gap-y-2 pt-3 max-w-md mx-auto">
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-blue-400"></div>
+                          <div className="border border-blue-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-blue-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">VP Eng</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-blue-400"></div>
+                          <div className="border border-blue-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-blue-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">VP Product</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-blue-400"></div>
+                          <div className="border border-blue-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-blue-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Security</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-blue-400"></div>
+                          <div className="border border-blue-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-blue-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Data & AI</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-blue-400"></div>
+                          <div className="border border-blue-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-blue-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Tech Support</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* COO */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+                className="flex flex-col items-center w-full"
+              >
+                <div className="w-0.5 h-3 bg-primary-300"></div>
+                <div className="bg-white border-2 border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow p-2 w-28 text-center">
+                  <img 
+                    src="https://ui-avatars.com/api/?name=COO&size=40&background=16a34a&color=fff&bold=true&rounded=true" 
+                    alt="COO"
+                    className="w-10 h-10 rounded-full mx-auto mb-1.5 border-2 border-green-500 shadow-md object-cover ring-2 ring-green-100"
+                  />
+                  <h3 className="text-[10px] font-bold text-gray-900">COO</h3>
+                  <p className="text-green-600 text-[8px] font-medium">Operations</p>
+                </div>
+
+                {/* Tree Structure - Horizontal Layout */}
+                <div className="mt-2 w-full">
+                  <div className="flex flex-col items-center">
+                    <div className="w-0.5 h-4 bg-green-400"></div>
+                    <div className="w-full relative">
+                      {/* Horizontal line connecting all directors - GREEN for COO */}
+                      <div className="absolute left-0 right-0 top-0 h-0.5 bg-green-400"></div>
+                      
+                      <div className="flex flex-wrap justify-center gap-x-1.5 gap-y-2 pt-3 max-w-md mx-auto">
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-green-400"></div>
+                          <div className="border border-green-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-green-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Operations</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-green-400"></div>
+                          <div className="border border-green-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-green-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Business Dev</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-green-400"></div>
+                          <div className="border border-green-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-green-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Compliance</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-green-400"></div>
+                          <div className="border border-green-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-green-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Finance</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* CMO */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="flex flex-col items-center w-full"
+              >
+                <div className="w-0.5 h-3 bg-primary-300"></div>
+                <div className="bg-white border-2 border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow p-2 w-28 text-center">
+                  <img 
+                    src="https://ui-avatars.com/api/?name=CMO&size=40&background=ea580c&color=fff&bold=true&rounded=true" 
+                    alt="CMO"
+                    className="w-10 h-10 rounded-full mx-auto mb-1.5 border-2 border-orange-500 shadow-md object-cover ring-2 ring-orange-100"
+                  />
+                  <h3 className="text-[10px] font-bold text-gray-900">CMO</h3>
+                  <p className="text-orange-600 text-[8px] font-medium">Marketing</p>
+                </div>
+
+                {/* Tree Structure - Horizontal Layout */}
+                <div className="mt-2 w-full">
+                  <div className="flex flex-col items-center">
+                    <div className="w-0.5 h-4 bg-orange-400"></div>
+                    <div className="w-full relative flex justify-center">
+                      {/* Vertical line for single director - ORANGE for CMO */}
+                      <div className="relative">
+                        <div className="absolute left-1/2 -top-0 w-0.5 h-3 bg-orange-400"></div>
+                        <div className="pt-3">
+                          <div className="border border-orange-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-orange-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Marketing</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* CHRO */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.25 }}
+                className="flex flex-col items-center w-full"
+              >
+                <div className="w-0.5 h-3 bg-primary-300"></div>
+                <div className="bg-white border-2 border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow p-2 w-28 text-center">
+                  <img 
+                    src="https://ui-avatars.com/api/?name=CHRO&size=40&background=db2777&color=fff&bold=true&rounded=true" 
+                    alt="CHRO"
+                    className="w-10 h-10 rounded-full mx-auto mb-1.5 border-2 border-pink-500 shadow-md object-cover ring-2 ring-pink-100"
+                  />
+                  <h3 className="text-[10px] font-bold text-gray-900">CHRO</h3>
+                  <p className="text-pink-600 text-[8px] font-medium">Human Resources</p>
+                </div>
+
+                {/* Tree Structure - Horizontal Layout */}
+                <div className="mt-2 w-full">
+                  <div className="flex flex-col items-center">
+                    <div className="w-0.5 h-4 bg-pink-400"></div>
+                    <div className="w-full relative">
+                      {/* Horizontal line connecting directors - PINK for CHRO */}
+                      <div className="absolute left-1/4 right-1/4 top-0 h-0.5 bg-pink-400"></div>
+                      
+                      <div className="flex flex-wrap justify-center gap-x-1.5 gap-y-2 pt-3">
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-pink-400"></div>
+                          <div className="border border-pink-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-pink-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir HR</span>
+                          </div>
+                        </div>
+                        <div className="relative">
+                          <div className="absolute left-1/2 -top-2 w-0.5 h-2 bg-pink-400"></div>
+                          <div className="border border-pink-400 rounded py-1.5 px-2 bg-white flex items-center gap-1.5 justify-center whitespace-nowrap">
+                            <FaUserTie className="text-pink-600 text-[10px] flex-shrink-0" />
+                            <span className="text-[9px] font-semibold text-gray-800">Dir Legal</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
