@@ -84,7 +84,7 @@ const ServiceGuide = () => {
       title: "Bill Payment Service",
       shortDesc: "Pay bills in Ethiopia from anywhere",
       color: "blue",
-      overview: "Pay utility bills, school fees, and other services directly in Ethiopia from anywhere in the world. Convenient, fast, and secure bill payment solutions for your family's needs.",
+      overview: "Pay for real estate and other services in Ethiopia instantly, anytime",
       howItWorks: [
         {
           title: "Select Bill Payment",
