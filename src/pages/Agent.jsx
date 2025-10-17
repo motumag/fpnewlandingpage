@@ -342,8 +342,8 @@ const Agent = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      {/* Testimonials Section - Temporarily Disabled */}
+      {false && <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -406,7 +406,7 @@ const Agent = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* Application CTA Section */}
       <section id="apply" className="py-20 bg-gradient-to-r from-primary-600 to-primary-800">
