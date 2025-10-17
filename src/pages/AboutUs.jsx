@@ -356,13 +356,13 @@ const AboutUs = () => {
               className="flex flex-col items-center mb-3"
             >
               <div className="bg-white border-2 border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-shadow p-2.5 w-32 text-center">
-                <img 
+                {/* <img 
                   src="https://ui-avatars.com/api/?name=Country+Director&size=48&background=7c3aed&color=fff&bold=true&rounded=true" 
                   alt="Country Director"
                   className="w-12 h-12 rounded-full mx-auto mb-1.5 border-2 border-accent-500 shadow-md object-cover ring-2 ring-accent-100"
-                />
-                <h3 className="text-xs font-bold text-gray-900">Country Dir</h3>
-                <p className="text-accent-600 text-[8px] font-medium">Ethiopia</p>
+                /> */}
+                {/* <h3 className="text-xs font-bold text-gray-900">Country Dir</h3> */}
+                {/* <p className="text-accent-600 text-[8px] font-medium">Ethiopia</p> */}
               </div>
               {/* Vertical Line */}
               <div className="w-0.5 h-4 bg-primary-300 mt-1"></div>
