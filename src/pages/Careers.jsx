@@ -26,8 +26,9 @@ const Careers = () => {
     { name: 'Other', icon: <FaUsers />, color: 'gray' }
   ]
 
+  // No active job postings at the moment
   const jobListings = [
-    {
+    /* {
       id: 1,
       title: 'Principal Software Engineer',
       department: 'Engineering',
@@ -463,7 +464,7 @@ The ideal candidate has a strong technical background and experience in fintech 
         'Innovation-focused culture'
       ],
       posted: '1 week ago'
-    }
+    } */
   ]
 
   const filteredJobs = selectedDepartment === 'All' 
