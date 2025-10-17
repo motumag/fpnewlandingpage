@@ -336,7 +336,7 @@ const Home = () => {
               </div>
               <div className="bg-white rounded-xl p-6 text-center shadow-md">
                 <div className="text-3xl font-bold text-primary-600 mb-2">NBE</div>
-                <div className="text-sm text-gray-600">Approved</div>
+                <div className="text-sm text-gray-600">Nationa Bank of Ethiopia - Approved</div>
               </div>
             </div>
           </motion.div>
