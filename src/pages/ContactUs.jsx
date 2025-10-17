@@ -262,7 +262,7 @@ const ContactUs = () => {
             </p>
             <div className="bg-white rounded-xl p-8 max-w-2xl mx-auto space-y-4">
               <div>
-                <p className="text-gray-700 mb-2 font-semibold text-lg">FastPay Technology PLC</p>
+                <p className="text-gray-700 mb-2 font-semibold text-lg">FastPay LLC</p>
                 <p className="text-gray-600">8701 Georgia Ave, Suite 606</p>
                 <p className="text-gray-600">Silver Spring, Maryland, 20910</p>
               </div>
