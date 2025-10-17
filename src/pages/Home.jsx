@@ -33,7 +33,7 @@ const Home = () => {
     {
       icon: <FaFileInvoiceDollar className="text-4xl text-primary-600" />,
       title: "Bill Payment Service",
-      description: "Pay utility bills, school fees, and other services directly in Ethiopia from anywhere in the world.",
+      description: "Pay for real estate and other services in Ethiopia instantly, anytime.",
       link: "bill-payment-service"
     },
     {
