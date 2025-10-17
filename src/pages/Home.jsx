@@ -87,7 +87,7 @@ const Home = () => {
 
   const stats = [
     { number: "5+", label: "Partner Banks" },
-    { number: "30+", label: "Instant Bank Deposit" },
+    { number: "30+", label: "Banks Instant Deposits." },
     { number: "37K+", label: "Customer Base" },
     { number: "24/7", label: "Availability" },
   ]
