@@ -39,9 +39,14 @@ const ServiceGuide = () => {
           description: "Sign up with your email and complete the quick verification process with your government-issued ID."
         },
         {
+          title: "Complete KYC/AML Verification",
+          description: "Complete the KYC/AML verification process to ensure the security of your transaction."
+        },
+        {
           title: "Add Recipient Details",
           description: "Enter recipient's name, bank account or mobile wallet details, and save for future transfers."
         },
+
         {
           title: "Choose Payment Method",
           description: "Link your debit card, bank account, or mobile wallet for seamless payments."
