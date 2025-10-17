@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { FaUser, FaLock, FaEye, FaEyeSlash, FaApple, FaGoogle, FaMobileAlt, FaShieldAlt } from 'react-icons/fa'
+import { FaUser, FaLock, FaEye, FaEyeSlash, FaMobileAlt, FaShieldAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
@@ -111,8 +111,8 @@ const Login = () => {
             className="w-full max-w-md mx-auto lg:mx-0"
           >
             <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
-              {/* Tab Switcher */}
-              <div className="flex bg-gray-100 rounded-xl p-1 mb-8">
+              {/* Tab Switcher - Disabled Sign Up */}
+              {/* <div className="flex bg-gray-100 rounded-xl p-1 mb-8">
                 <button
                   onClick={() => setIsLogin(true)}
                   className={`flex-1 py-3 rounded-lg font-semibold transition-all duration-300 ${
@@ -133,20 +133,18 @@ const Login = () => {
                 >
                   Sign Up
                 </button>
-              </div>
+              </div> */}
 
               {/* Form Title */}
               <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                {isLogin ? 'Welcome Back' : 'Create Account'}
+                Welcome Back
               </h2>
               <p className="text-gray-600 mb-6">
-                {isLogin
-                  ? 'Enter your credentials to access your account'
-                  : 'Get started with FastPay in minutes'}
+                Enter your credentials to access your account
               </p>
 
-              {/* Social Login Buttons */}
-              <div className="space-y-3 mb-6">
+              {/* Social Login Buttons - Removed */}
+              {/* <div className="space-y-3 mb-6">
                 <button className="w-full flex items-center justify-center space-x-3 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-700 font-semibold py-3 rounded-lg transition-all duration-300 hover:shadow-md">
                   <FaGoogle className="text-xl text-red-500" />
                   <span>Continue with Google</span>
@@ -164,7 +162,7 @@ const Login = () => {
                 <div className="relative flex justify-center text-sm">
                   <span className="px-4 bg-white text-gray-500">Or continue with email</span>
                 </div>
-              </div>
+              </div> */}
 
               {/* Form */}
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -320,12 +318,12 @@ const Login = () => {
                   type="submit"
                   className="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
-                  {isLogin ? 'Sign In' : 'Create Account'}
+                  Sign In
                 </button>
               </form>
 
-              {/* Footer Links */}
-              <div className="mt-6 text-center">
+              {/* Footer Links - Sign Up Removed */}
+              {/* <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600">
                   {isLogin ? "Don't have an account? " : 'Already have an account? '}
                   <button
@@ -335,7 +333,7 @@ const Login = () => {
                     {isLogin ? 'Sign up' : 'Sign in'}
                   </button>
                 </p>
-              </div>
+              </div> */}
 
               {/* Mobile-only compliance info */}
               <div className="lg:hidden mt-8 pt-6 border-t border-gray-200">

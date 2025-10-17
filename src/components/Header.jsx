@@ -128,14 +128,14 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Login Button - Desktop */}
+          {/* Agent Login Button - Desktop */}
           <div className="hidden lg:flex items-center">
             <Link
               to="/login"
               className="flex items-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
             >
               <FaUser />
-              <span>Login</span>
+              <span>Agent Login</span>
             </Link>
           </div>
 
@@ -176,7 +176,7 @@ const Header = () => {
               className="flex items-center justify-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white px-4 py-3 rounded-lg font-semibold transition-all duration-300 mt-4"
             >
               <FaUser />
-              <span>Login</span>
+              <span>Agent Login</span>
             </Link>
           </div>
         </motion.div>
