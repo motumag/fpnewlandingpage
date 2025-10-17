@@ -113,7 +113,7 @@ const AboutUs = () => {
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">About FastPay LLC</h1>
             <p className="text-xl text-primary-100 leading-relaxed">
-              A licensed FinTech Money Services Business dedicated to delivering innovative, secure, and dependable cross-border payment solutions between the United States and Ethiopia.
+              A licensed FinTech Money Services Business dedicated to delivering innovative, secure, and dependable cross-border payment solutions.
             </p>
           </motion.div>
         </div>
