@@ -66,26 +66,31 @@ const Agent = () => {
     },
     {
       step: "2",
+      title: "KYC/AML Verification",
+      description: "Complete the KYC/AML verification process to ensure the security of your transaction."
+    },
+    {
+      step: "3",
       title: "Verification Process",
       description: "We conduct background checks and verify your business license and compliance requirements."
     },
     {
-      step: "3",
+      step: "4",
       title: "Training Program",
       description: "Complete our comprehensive 2-day training covering platform usage, compliance, and procedures."
     },
     {
-      step: "4",
+      step: "5",
       title: "Get Certified",
       description: "Receive your agent credentials, access to the portal, and marketing materials."
     },
     {
-      step: "5",
+      step: "6",
       title: "Start Processing",
       description: "Begin accepting transfers, processing transactions, and earning commissions immediately."
     },
     {
-      step: "6",
+      step: "7",
       title: "Grow Your Business",
       description: "Scale your operations, serve more customers, and increase your earnings over time."
     }
